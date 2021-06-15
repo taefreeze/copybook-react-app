@@ -5,11 +5,6 @@ services:
   client:
     container_name: Client
     build: ./client
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - '.:/app'
-      - '/app/node_modules'
     ports:
       - 3000:3000
     environment:
@@ -18,5 +13,5 @@ services:
   server:
     container_name: server
     build: ./server
-      context: .
-      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
